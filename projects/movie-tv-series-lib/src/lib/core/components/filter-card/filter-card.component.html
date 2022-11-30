@@ -1,0 +1,18 @@
+<mat-card class="filter-card">
+  <div style="margin-bottom: 24px; text-align: center">Filter</div>
+  <mat-expansion-panel (closed)="onExpansionPanelClosed()">
+    <mat-expansion-panel-header>
+      <mat-panel-title> {{ panelTitle }} </mat-panel-title>
+    </mat-expansion-panel-header>
+    <div *ngFor="let category of categoryList">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="getCategoryForFilter(category)"
+        aria-label="Genres filter"
+      >
+        {{ category }}
+      </button>
+    </div>
+  </mat-expansion-panel>
+</mat-card>

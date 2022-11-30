@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-movie-app';
+
+  onActivate(event: Object): void {
+    window.scroll(0,0);
+  }
 }

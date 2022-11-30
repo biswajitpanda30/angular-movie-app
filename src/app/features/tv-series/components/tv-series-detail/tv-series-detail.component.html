@@ -1,0 +1,41 @@
+<mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+<div
+  class="tv-series-main-container"
+  [ngClass]="{ 'padding-top-60': !mobileQuery.matches }"
+  [style.background-image]="
+    'linear-gradient(rgba(52,41,49,0.8), rgba(68,34,102,0.8)),url(' +
+    tvSeries.Poster +
+    ')'
+  "
+>
+  <div class="tv-series-main-data-container container">
+    <lib-detail [item]="tvSeriesForDetailPage"></lib-detail>
+  </div>
+</div>
+
+<div class="container">
+  <div class="similar-tv-series default-margin-bottom">
+    <h2>Related TV Series</h2>
+    <div *ngIf="relatedTvSeriesList.length > 0; else noRelatedTvSeries">
+      <div style="padding: 5px 5px">
+        <owl-carousel-o [options]="customOptions">
+          <ng-template
+            carouselSlide
+            *ngFor="let tvSeries of relatedTvSeriesList"
+          >
+            <lib-poster-card-container
+              [id]="tvSeries.imdbID"
+              [title]="tvSeries.Title"
+              [poster]="tvSeries.Poster"
+              [routerLink]="'/tv-series/detail/' + tvSeries.imdbID"
+            ></lib-poster-card-container>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
+
+    <ng-template #noRelatedTvSeries>
+      <lib-empty-related-content></lib-empty-related-content>
+    </ng-template>
+  </div>
+</div>

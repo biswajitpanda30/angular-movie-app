@@ -1,0 +1,46 @@
+<header class="navbar__container" [class.colored__scrolled]="isScrolled">
+  <nav class="space-between navbar__nav container">
+    <a routerLink="/" class="flex-start navbar__logo">
+      <h1 class="colored__scrolled">Movie + Tv Series</h1>
+    </a>
+    <div class="navbar__list">
+      <a
+        mat-button
+        routerLink=""
+        [routerLinkActive]="['activated-route']"
+        [routerLinkActiveOptions]="{ exact: true }"
+        aria-label="Home"
+        >Home</a
+      >
+      <a
+        mat-button
+        routerLink="movies"
+        [routerLinkActive]="['activated-route']"
+        aria-label="Movies"
+        >Movies</a
+      >
+      <a
+        mat-button
+        routerLink="tv-series"
+        [routerLinkActive]="['activated-route']"
+        aria-label="TV Series"
+        >TV Series</a
+      >
+      <input
+        [ngClass]="showInputField ? 'show-input-field' : 'hide-input-field'"
+        matInput
+        type="text"
+        placeholder="Search.."
+        [(ngModel)]="searchInput"
+      />
+      <button
+        mat-icon-button
+        [routerLink]="routeToPage"
+        color="primary"
+        (click)="showInputField = !showInputField"
+      >
+        <mat-icon>search</mat-icon>
+      </button>
+    </div>
+  </nav>
+</header>

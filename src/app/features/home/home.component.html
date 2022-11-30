@@ -1,0 +1,43 @@
+<section class="home-main-content"></section>
+
+<div class="container">
+  <!--Movies-->
+  <section class="movies__container">
+    <h1 class="movies__title" title="Go to Movies">
+      <a routerLink="/movies" class="colored-background-before">
+        <mat-icon>movie</mat-icon>
+        Movies
+      </a>
+    </h1>
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide *ngFor="let movie of moviesList">
+        <lib-poster-card-container
+          [id]="movie.imdbID"
+          [title]="movie.Title"
+          [poster]="movie.Poster"
+          [routerLink]="'/movies/detail/' + movie.imdbID"
+        ></lib-poster-card-container>
+      </ng-template>
+    </owl-carousel-o>
+  </section>
+  <br />
+  <!--Series-->
+  <section class="series__container">
+    <h2 class="series__title" title="Go to TV Series">
+      <a routerLink="/tv-series" class="colored-background-before">
+        <mat-icon>tv_gen</mat-icon>
+        TV Series
+      </a>
+    </h2>
+    <owl-carousel-o [options]="customOptions">
+      <ng-template carouselSlide *ngFor="let tvSeries of tvSeriesList">
+        <lib-poster-card-container
+          [id]="tvSeries.imdbID"
+          [title]="tvSeries.Title"
+          [poster]="tvSeries.Poster"
+          [routerLink]="'/tv-series/detail/' + tvSeries.imdbID"
+        ></lib-poster-card-container>
+      </ng-template>
+    </owl-carousel-o>
+  </section>
+</div>

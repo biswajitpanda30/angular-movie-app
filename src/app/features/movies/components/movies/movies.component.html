@@ -1,0 +1,20 @@
+<div class="container" style="display: flex">
+  <lib-filter-card
+    [categoryList]="uniqueGenre"
+    [panelTitle]="panelTitle"
+    [fullList]="moviesList"
+    [filteredList]="filteredMoviesList"
+    (category)="getGenreForFilter($event)"
+    (matExpansionPanelClosedEvent)="resetFilteredList($event)"
+  ></lib-filter-card>
+  <div class="movies-list">
+    <span *ngFor="let movie of filteredMoviesList">
+      <lib-poster-card-container
+        [id]="movie.imdbID"
+        [title]="movie.Title"
+        [poster]="movie.Poster"
+        [routerLink]="'/movies/detail/' + movie.imdbID"
+      ></lib-poster-card-container>
+    </span>
+  </div>
+</div>

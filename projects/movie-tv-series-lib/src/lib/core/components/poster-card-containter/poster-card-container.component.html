@@ -1,0 +1,28 @@
+<div class="poster">
+  <a
+    [routerLink]="
+      routerLink
+    "
+    [title]="'Go to ' + title"
+  >
+    <img
+      class="poster__image"
+      [src]="poster"
+      [alt]="title"
+      appImgMissingDirective
+    />
+  </a>
+  <br />
+  <div class="poster__content">
+    <a
+      *ngIf="title"
+      [routerLink]="
+        routerLink
+      "
+      [title]="title"
+      class="poster__title colored-hover"
+    >
+      {{ title }}
+    </a>
+  </div>
+</div>

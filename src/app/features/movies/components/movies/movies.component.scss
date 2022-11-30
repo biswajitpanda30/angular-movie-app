@@ -1,0 +1,32 @@
+.movies-list {
+  margin-top: 6rem;
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 1 calc(80% - 12px);
+}
+
+.movies-list > * {
+  flex: 0 1 calc(20% - 8px);
+}
+
+// xs
+@media screen and (max-width: 599px) {
+  .movies-list {
+    margin-top: 2rem;
+    flex: 0 1 calc(80% - 8px);
+    h2 {
+      text-align: center;
+    }
+  }
+}
+
+// sm
+@media screen and (min-width: 600px) and (max-width: 959px) {
+  .movies-list {
+    margin-top: 2rem;
+    flex: 0 1 calc(60% - 8px);
+    h2 {
+      text-align: center;
+    }
+  }
+}

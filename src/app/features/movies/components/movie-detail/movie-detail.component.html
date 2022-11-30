@@ -1,0 +1,39 @@
+<mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+
+<div
+  class="movie-main-container"
+  [ngClass]="{ 'padding-top-60': !mobileQuery.matches }"
+  [style.background-image]="
+    'linear-gradient(rgba(52,41,49,0.80), rgba(0,0,0,0.85)), url(' +
+    movie.Poster +
+    ')'
+  "
+>
+  <div class="movie-main-data-container container">
+    <lib-detail [item]="movieForDetailPage"></lib-detail>
+  </div>
+</div>
+
+<div class="container">
+  <div class="similar-movies default-margin-bottom">
+    <h2>Related Movies</h2>
+    <div *ngIf="relatedMoviesList.length > 0; else noRelatedMovies">
+      <div style="padding: 5px 5px">
+        <owl-carousel-o [options]="customOptions">
+          <ng-template carouselSlide *ngFor="let movie of relatedMoviesList">
+            <lib-poster-card-container
+              [id]="movie.imdbID"
+              [title]="movie.Title"
+              [poster]="movie.Poster"
+              [routerLink]="'/movies/detail/' + movie.imdbID"
+            ></lib-poster-card-container>
+          </ng-template>
+        </owl-carousel-o>
+      </div>
+    </div>
+
+    <ng-template #noRelatedMovies>
+      <lib-empty-related-content></lib-empty-related-content>
+    </ng-template>
+  </div>
+</div>

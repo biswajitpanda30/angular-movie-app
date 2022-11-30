@@ -1,0 +1,78 @@
+<div style="display: flex">
+  <div class="main-img">
+    <img
+      [src]="item.poster"
+      data-loaded="true"
+      [alt]="item.title"
+      appImgMissingDirective
+    />
+  </div>
+
+  <div class="main-info">
+    <div>
+      <h2 class="main-title">{{ item.title }}</h2>
+      <div class="short-info">
+        <p class="quick-info">
+          <mat-icon class="yellow-star-icon">star_rate</mat-icon
+          >{{ item.imdbRating }}/10 | {{ item.released }} |
+          {{ item.runtime }}
+        </p>
+      </div>
+    </div>
+
+    <section>
+      <div fxShow fxHide.sm="true" fxHide.xs="true">
+        <h3>{{ item.plot }}</h3>
+      </div>
+      <h3>Genre</h3>
+      <button
+        mat-button
+        mat-raised-button
+        color="primary"
+        aria-label="Genres"
+        disabled="true"
+      >
+        {{ item.genre | replaceCommasInString }}
+      </button>
+      <h3>Actors</h3>
+      <h3>{{ item.actors }}</h3>
+      <h3>Director</h3>
+      <h3>{{ item.director }}</h3>
+      <h3>Language</h3>
+      <h3>{{ item.language }}</h3>
+      <br />
+      <button
+        mat-button
+        mat-raised-button
+        class="button-margin"
+        color="primary"
+        aria-label="Play"
+        (click)="openDialog()"
+      >
+        Play
+        <mat-icon>play_circle_outline</mat-icon>
+      </button>
+      <button
+        mat-button
+        mat-raised-button
+        class="button-margin"
+        color="primary"
+        aria-label="Downlaod"
+        (click)="openDialog()"
+      >
+        Downlaod
+        <mat-icon>save_alt</mat-icon>
+      </button>
+      <button
+        mat-button
+        mat-raised-button
+        color="primary"
+        aria-label="Share"
+        (click)="openDialog()"
+      >
+        Share
+        <mat-icon>share</mat-icon>
+      </button>
+    </section>
+  </div>
+</div>

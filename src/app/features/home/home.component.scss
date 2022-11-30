@@ -1,0 +1,89 @@
+.home-main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  background: linear-gradient(rgba(52,41,49,0.8) 30%, rgba(26, 33, 74, 0.8)), url('../../../assets/images/background-main.jpg') no-repeat bottom;
+  background-size: cover;
+  font-size: 4rem;
+}
+
+.movies__container, .series__container {
+  margin: 2rem 0;
+  position: relative;
+}
+
+.movies__title, .series__title {
+  position: relative;
+  padding: auto;
+
+  a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+    z-index: 10;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      border-radius: 4px;
+      bottom: -8px;
+      left: 0;
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: transform .3s ease-in-out;
+    }
+
+    &:hover::before {
+      transform-origin: left;
+      transform: scaleX(1);
+    }
+  }
+
+  &:hover {
+    background-position: 0 100%;
+  }
+
+  .mat-icon {
+    margin-right: 10px;
+  }
+}
+
+// xs
+@media screen and (max-width: 599px) {
+  .home-main-content {
+    height: 350px;
+    font-size: 2rem;
+  }
+
+  .movies__container, .series__container {
+    padding-left: 5px;
+  }
+
+  .movies__title, .series__title {
+    position: initial;
+    padding-bottom: 10px;
+    a {justify-content: center;}
+  }
+}
+
+// sm
+@media screen and (min-width: 600px) and (max-width: 959px) {
+  .home-main-content {
+    height: 400px;
+  }
+
+  .movies__container, .series__container {
+      align-self: center;
+  }
+
+  .movies__title, .series__title {
+    position: initial;
+    padding-bottom: 10px;
+
+    a {justify-content: center;}
+  }
+}

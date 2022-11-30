@@ -1,0 +1,59 @@
+.movie-main-container {
+  background-size: cover;
+  background-position: center top;
+}
+
+h2 {
+  font-weight: 500;
+  color: #fff;
+  font-size: 2.1em;
+  opacity: 0.8;
+  margin: 0;
+}
+
+.similar-movies {
+  h2 {
+    margin: 30px 0 20px 0;
+  }
+}
+
+// xs
+@media screen and (max-width: 599px) {
+  .movie-main-container {
+    height: 240px;
+  }
+
+  .movie-main-data-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 0;
+  }
+
+  .similar-movies {
+    h2 {
+      text-align: center;
+    }
+  }
+}
+
+// sm
+@media screen and (min-width: 600px) and (max-width: 959px) {
+}
+
+// md
+@media screen and (min-width: 960px) and (max-width: 1279px) {
+}
+
+// lg
+@media screen and (min-width: 1280px) and (max-width: 1919px) {
+  .movie-main-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 0 20px;
+  }
+}
+
+// xl
+@media screen and (min-width: 1920px) and (max-width: 5000px) {
+}

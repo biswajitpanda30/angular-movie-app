@@ -1,0 +1,19 @@
+.footer {
+  background: #212121;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  margin-bottom: auto;
+  position: relative;
+  z-index: 1;
+  height: -3em;
+  padding: 25px 0;
+  font-size: 0.9rem;
+  margin-top: 4rem;
+  color: white;
+
+  &__link {
+    color: rgb(236, 61, 90);
+  }
+}

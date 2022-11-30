@@ -1,0 +1,22 @@
+<mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+
+<div class="container" style="display: flex">
+  <lib-filter-card
+    [categoryList]="uniqueGenre"
+    [panelTitle]="panelTitle"
+    [fullList]="tvSeriesList"
+    [filteredList]="filteredTvSeriesList"
+    (category)="getGenreForFilter($event)"
+    (matExpansionPanelClosedEvent)="resetFilteredList($event)"
+  ></lib-filter-card>
+  <div class="tv-series-list">
+    <span *ngFor="let tvSeries of filteredTvSeriesList">
+      <lib-poster-card-container
+        [id]="tvSeries.imdbID"
+        [title]="tvSeries.Title"
+        [poster]="tvSeries.Poster"
+        [routerLink]="'/tv-series/detail/' + tvSeries.imdbID"
+      ></lib-poster-card-container>
+    </span>
+  </div>
+</div>
