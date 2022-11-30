@@ -11,6 +11,11 @@
 
 // xs
 @media screen and (max-width: 599px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+  }
   .movies-list {
     margin-top: 2rem;
     flex: 0 1 calc(80% - 8px);
@@ -23,8 +28,19 @@
 // sm
 @media screen and (min-width: 600px) and (max-width: 959px) {
   .movies-list {
-    margin-top: 2rem;
+    margin-top: 6rem;
     flex: 0 1 calc(60% - 8px);
+    h2 {
+      text-align: center;
+    }
+  }
+}
+
+// md
+@media screen and (min-width: 960px) and (max-width: 1279px) {
+  .movies-list {
+    margin-top: 2rem;
+    flex: 0 1 calc(80% - 8px);
     h2 {
       text-align: center;
     }

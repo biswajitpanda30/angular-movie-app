@@ -2,17 +2,17 @@
 
 .navbar__container {
   width: 100%;
-  background-color: rgba(0,0,0,0);
+  background-color: rgba(0, 0, 0, 0);
   position: fixed;
   top: 0;
   left: 0;
-  transition: .4s;
+  transition: 0.4s;
   z-index: 100;
 }
 
 .colored__scrolled {
   background-color: #212121;
-  transition: .4s;
+  transition: 0.4s;
   color: red;
 }
 
@@ -35,9 +35,9 @@
   letter-spacing: 1px;
   display: inline-flex;
   align-items: center;
-  column-gap: .25rem;
+  column-gap: 0.25rem;
   opacity: 0.6;
-   
+
   h1 {
     margin-top: 1rem;
     border: solid;
@@ -53,7 +53,7 @@
 
   a {
     color: white;
-    transition: .3s;
+    transition: 0.3s;
   }
 }
 
@@ -81,4 +81,15 @@
 
 .red-icon {
   color: red;
+}
+
+// xs
+@media screen and (max-width: 599px) {
+  .colored__scrolled {
+    display: none;
+  }
+}
+
+// sm
+@media screen and (min-width: 600px) and (max-width: 959px) {
 }
